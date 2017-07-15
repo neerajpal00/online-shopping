@@ -1,20 +1,22 @@
 package net.kzn.omlineshopping.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.kzn.shoppingbackend.dao.CategoryDAO;
+import net.kzn.shoppingbackend.daoimpl.CategoryDAOImpl;
 import net.kzn.shoppingbackend.dto.Category;
 
 @Controller
 public class PageController {
 	
 	@Autowired
-	private CategoryDAO categoryDAO;
-
+	 CategoryDAO categoryDAO;
+	
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
