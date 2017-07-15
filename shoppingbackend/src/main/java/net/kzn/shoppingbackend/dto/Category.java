@@ -27,7 +27,7 @@ public class Category {
 	private String imageURL;
 
 	@Column(name = "is_active")
-	private String active;
+	private boolean active=true;
 
 	public int getId() {
 		return id;
@@ -61,18 +61,16 @@ public class Category {
 		this.imageURL = imageURL;
 	}
 
-	public String isActive() {
+	public boolean isActive() {
 		return active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
-				+ ", active=" + active + "]";
-	}
+	
+
+	
 
 }

@@ -31,9 +31,9 @@ public class CategoryTestCase {
 	{
 		category=new Category();
 		category.setId(6);
-		category.setName("Laptop");
+		category.setName("television");
 		category.setDescription("description for television");
-		category.setImageURL("cat_3.png");
+		category.setImageURL("cat_5.png");
 		assertEquals("successfully added category",true,categoryDAO.add(category));
 		
 	}
