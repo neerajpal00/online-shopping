@@ -21,15 +21,14 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public List<Category> list() {
-		// return (List<Category>)
-		// sessionFactory.getCurrentSession().createCriteria(Category.class).list();
-		String queryname = "from Category where active=:active";
+		 return (List<Category>) sessionFactory.getCurrentSession().createCriteria(Category.class).list();
+		/*String queryname = "from Category where active=:active";
 		Query query = sessionFactory.getCurrentSession().createQuery(queryname);
 		query.setParameter("active", true);
 
 		List<Category> list = query.list();
 
-		return list;
+		return list;*/
 	}
 
 	@Override
@@ -48,8 +47,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return false;
 		}
+		return false;
 	}
 
 	@Override

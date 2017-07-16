@@ -35,7 +35,21 @@
 				</div>
 
 			</div>
-
+			
+			
+			<!-- datatable sample -->
+			<div class="row">
+				<div class="col-xs-12">
+					<table id="productListTable" class="table table-striped table-borderd">
+						<thead>
+						    <tr>
+						    	<th>ID</th>
+						    	<th>NAME</th>
+						    </tr>
+						</thead>
+					</table>
+				</div>
+			</div>
 		</div>
 		<!-- col-md-9 -->
 	</div>

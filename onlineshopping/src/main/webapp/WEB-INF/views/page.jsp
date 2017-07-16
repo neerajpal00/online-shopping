@@ -30,6 +30,9 @@
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+<!-- Bootstrap datatable CSS -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
 
@@ -80,6 +83,13 @@
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
+		
+		<!-- jquery datatable Javascript -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- bootstrap datatable Javascript -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+		
 
 		<!--  add self created myapp.js for window active problet -->
 		<script src="${js}/myapp.js"></script>

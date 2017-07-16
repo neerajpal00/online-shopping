@@ -26,4 +26,37 @@ $(function() {
 
 	}
 
+
+
+
+//CODE FOR JQUERY DATATABLE
+//CREATE A DATASET
+
+var products=[
+              	['11','ABC'],
+              	['12','BC'],
+              	['13','C'],
+              	['14','DABC'],
+              	['15','EABC'],
+              	['116','FABC'],
+              	['17','GABC'],
+              	['18','HABC'],
+              	['19','IABC'],
+              	['20','JABC']
+              	
+               ];
+
+var $table=$('#productListTable');
+
+if($table.length)
+	{
+	
+	$table.DataTable({
+		
+		lengthMenu:[ [3,5,10,-1],['3 records', '5 records','10 records','All']  ],
+		pageLength:5,
+		data:products
+	});
+	//console.log('inside the table');
+	}
 });
