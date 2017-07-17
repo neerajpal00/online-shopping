@@ -8,6 +8,7 @@
 <spring:url var="css" value="/resources/css" />
 <spring:url var="images" value="/resources/images" />
 
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +26,14 @@
 <!-- For Active Menu Problem -->
 <script>
 	window.menu = '${title}';
+	window.contextRoot= '${contextRoot}';
 </script>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap theme CSS -->
+<!-- <link href="${css}/bootstrap.theme.css" rel="stylesheet"> -->
 
 <!-- Bootstrap datatable CSS -->
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
@@ -87,8 +92,8 @@
 		<!-- jquery datatable Javascript -->
 		<script src="${js}/jquery.dataTables.js"></script>
 		
-		<!-- bootstrap datatable Javascript -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
+		 <!-- bootstrap datatable Javascript -->
+		<script src="${js}/dataTables.bootstrap.js"></script> 
 		
 
 		<!--  add self created myapp.js for window active problet -->
