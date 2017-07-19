@@ -20,9 +20,9 @@ public class ProductDAOImpl implements ProductDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public Product get(int productId) {
+	public Product get(int productId1) {
 		try {
-			return (Product) sessionFactory.getCurrentSession().get(Product.class, productId);
+			return (Product) sessionFactory.getCurrentSession().get(Product.class, productId1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

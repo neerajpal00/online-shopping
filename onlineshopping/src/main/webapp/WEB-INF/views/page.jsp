@@ -75,8 +75,15 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 			
+			<!-- Loading when user View Product and select Category -->
+			
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<!-- Loading when user click single view product -->
+			<c:if test="${userClickShowProduct == true }">
+				<%@include file="singleProduct.jsp"%>
 			</c:if>
 		</div>
 		<!-- CONTENT DIV CLOSE -->

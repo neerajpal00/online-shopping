@@ -34,33 +34,39 @@ $(function() {
 
 
 
-var $table=$('#productListTable');
-if($table.length) {
+var $table2=$('#productListTable2');
+if($table2.length) {
 	//console.log('inside the table');
 	
-	var jsonUrl = '';
-	if(window.categoryId == '') {
+	var jsonUrl2 = '';
+	if(window.categoryId3 == '') {
 		
-		jsonUrl=window.contextRoot + '/json/data/all/products';
+		jsonUrl2=window.contextRoot + '/json/data/all/products';
 	}
 	else
 		{
-		jsonUrl=window.contextRoot + '/json/data/category/'+ window.categoryId +'/products';
+		jsonUrl2=window.contextRoot + '/json/data/category/'+ window.categoryId3 +'/products';
 
 		}
 	
 	
 	
-	$table.DataTable({
+	$table2.DataTable({
 		
 		lengthMenu:[ [3,5,10,-1],['3 records', '5 records','10 records','All']  ],
 		pageLength:5,
 		
 		ajax: {
-			url:jsonUrl,
+			url:jsonUrl2,
 			dataSrc: ''
 		},
 		columns: [
+		          {
+		        	 data:'code',
+		        	 mRender:function(data,type,row) {
+		        		 return '<img src="'+window.contextRoot+'/resources/images/'+data+'.jpg" class="dataTableImg">';
+		        	 }
+		          },
 		         {
 		        	 data:'name'
 		         },
@@ -68,10 +74,25 @@ if($table.length) {
 		        	 data:'brand'
 		         },
 		         {
-		        	 data:'unitPrice'
+		        	 data:'unitPrice',
+		             mRender: function(data,type,row) {
+		            	 return '&#8377;' + data;
+		             }		 
 		         },
 		         {
 		        	 data:'quantity'
+		         },
+		         {
+		        	 data:'id',
+		        	 mRender: function(data,type,row) {
+		        		 
+		        		 var str='';
+		        		 str += '<a href="'+window.contextRoot+'/show/'+data+'/product"  class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> view</a>  &#160;'; 
+		        		 str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>';
+		        		 
+		        		 return str;
+
+		        	 }
 		         }
 		      ]
 		
