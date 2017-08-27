@@ -28,13 +28,13 @@
 
 					 <c:if test="${userClickCategoryProducts==true}">
 					 		<script>
-							window.categoryId3='${category1.id}';
+							window.categoryId3='${category.id}';
 							</script>
 						<ol class="breadcrumb">
 
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
-							<li class="active">${category1.name}</li>
+							<li class="active">${category.name}</li>
 
 						</ol>
 					</c:if> 
@@ -61,6 +61,7 @@
 						
 						<tfoot>
 						    <tr>
+						    	<th></th>
 						    	<th>Name</th>
 						    	<th>Brand</th>
 						    	<th>Price</th>
@@ -71,6 +72,14 @@
 					</table>
 				</div>
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			
 		</div>
 		<!-- col-md-9 -->
 	</div>

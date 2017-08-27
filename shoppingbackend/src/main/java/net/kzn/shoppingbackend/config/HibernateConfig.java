@@ -22,7 +22,7 @@ public class HibernateConfig {
 	public final static String DATABASE_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	public final static String DATABASE_DIALECT = "org.hibernate.dialect.Oracle10gDialect";
 	public final static String DATABASE_USERNAME = "system";
-	public final static String DATABASE_PASSWORD = "system";
+	public final static String DATABASE_PASSWORD = "system1";
 
 	@Bean
 	public DataSource getDataSource() {

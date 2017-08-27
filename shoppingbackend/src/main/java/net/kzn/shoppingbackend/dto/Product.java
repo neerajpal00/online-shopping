@@ -7,29 +7,43 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Product {
 	
+	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String code;
+	@NotBlank(message="Please enter the Product Name")
 	private String name;
+	
+	@NotBlank(message="Please enter the Brand Name")
 	private String brand;
+	
 	@JsonIgnore
+	@NotBlank(message="Please enter the Description")
+
 	private String description;
 	
 	@Column(name="unit_price")
 	private double unitPrice;
+	@Min(value=1)
 	private int quantity;
 	
 	@Column(name="is_active")
 	@JsonIgnore
 	private boolean active;
-	
+	 
 	@Column(name="category_id")
 	@JsonIgnore
 	private int categoryId;
@@ -40,6 +54,18 @@ public class Product {
 	private int purchases;
 	private int views;
 	
+	
+	@Transient
+	private MultipartFile file1;
+	
+	public MultipartFile getFile1() {
+		return file1;
+	}
+
+	public void setFile1(MultipartFile file1) {
+		this.file1 = file1;
+	}
+
 	//constructor that generate unique code for table
 	public Product()
 	{
@@ -140,6 +166,14 @@ public class Product {
 
 	public void setViews(int views) {
 		this.views = views;
+	}
+	
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
+				+ views + "]";
 	}
 	
 	

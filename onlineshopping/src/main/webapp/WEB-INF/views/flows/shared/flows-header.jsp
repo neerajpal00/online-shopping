@@ -55,64 +55,7 @@
 	<div class="wrapper">  <!-- ADDED FOR FOOTER BOTTOM -->
 
 		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
-
+		<%@include file="flows-navbar.jsp" %>
+			
 		<!-- Page Content -->
 		<div class="content">  
-		<!-- aDDED FOR FOOTER BOTTOM -->
-			<!-- Loading the home page -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
-
-			<!-- Loading when user click about -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<!-- Loading when user click contact -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp"%>
-			</c:if>
-			
-			<!-- Loading when user View Product and select Category -->
-			
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-			
-			<!-- Loading when user click single view product -->
-			<c:if test="${userClickShowProduct == true }">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
-			
-			<!-- Loading when user manage product -->
-			<c:if test="${userClickManageProducts == true }">
-				<%@include file="manageProducts.jsp"%>
-			</c:if>
-		</div>
-		<!-- CONTENT DIV CLOSE -->
-		<!-- Footer comes here -->
-		<%@include file="./shared/footer.jsp"%>
-
-		<!-- jQuery -->
-		<script src="${js}/jquery.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-		
-		<!-- jquery datatable Javascript -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		 <!-- bootstrap datatable Javascript -->
-		<script src="${js}/dataTables.bootstrap.js"></script> 
-		
-
-		<!--  add self created myapp.js for window active problet -->
-		<script src="${js}/myapp.js"></script>
-	</div>
-	<!-- wrapper div close -->
-
-</body>
-
-</html>

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Category {
 
+	
+
 	/*
 	 * *private field
 	 */
@@ -67,6 +69,11 @@ public class Category {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	@Override
+	public String toString() {
+		return name;
 	}
 
 	

@@ -22,7 +22,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public Product get(int productId1) {
 		try {
-			return (Product) sessionFactory.getCurrentSession().get(Product.class, productId1);
+			return  (Product) sessionFactory.getCurrentSession().get(Product.class, productId1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
