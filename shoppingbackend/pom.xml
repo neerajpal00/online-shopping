@@ -20,11 +20,11 @@
 			<artifactId>spring-core</artifactId>
 			<version>4.3.6.RELEASE</version>
 			<exclusions>
-	  <exclusion>
-		<groupId>commons-logging</groupId>
-		<artifactId>commons-logging</artifactId>
-	  </exclusion>
-	</exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 
 		</dependency>
 
@@ -34,6 +34,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+			<version>4.3.6.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
 			<version>4.3.6.RELEASE</version>
 		</dependency>
 
@@ -47,28 +53,46 @@
 		<!-- SLF4J DEPENDENCY -->
 
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-		<!-- 2. Bridge logging from JCL to SLF4j-->
-<dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>jcl-over-slf4j</artifactId>
-	<version>1.7.12</version>
-</dependency>
+		<!-- 2. Bridge logging from JCL to SLF4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.12</version>
+		</dependency>
 
-<!-- 3. logback -->
-<dependency>
-	<groupId>ch.qos.logback</groupId>
-	<artifactId>logback-classic</artifactId>
-	<version>1.1.3</version>
-</dependency>
+		<!-- 3. logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.3</version>
+		</dependency>
 
 
 
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.4.Final</version>
 		</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>1.1.0.Final</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>5.4.1.Final</version>
+</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
 

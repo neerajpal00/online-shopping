@@ -18,11 +18,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 
-	public final static String DATABASE_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	public final static String DATABASE_URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	public final static String DATABASE_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	public final static String DATABASE_DIALECT = "org.hibernate.dialect.Oracle10gDialect";
 	public final static String DATABASE_USERNAME = "system";
-	public final static String DATABASE_PASSWORD = "system1";
+	public final static String DATABASE_PASSWORD = "system";
 
 	@Bean
 	public DataSource getDataSource() {
@@ -52,7 +52,7 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
-		properties.put("hibernate.hbm2ddl.auto", "update");
+		properties.put("hibernate.hbm2ddl.auto", "create");
 
 		return properties;
 	}

@@ -11,8 +11,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/webflow-config
-        http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd
-        ">
+        http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd" >
 
 
 	<context:component-scan base-package="net.kzn.omlineshopping,net.kzn.onlineshopping,net.kzn.shoppingbackend" />
