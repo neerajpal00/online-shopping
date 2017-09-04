@@ -19,7 +19,7 @@
 					<sf:form
 					class="form-horizontal" 
 					modelAttribute="user11"
-					id="registerForm"		
+					id="registerForm1"		
 					>
 
 						<div class="form-group">

@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.springframework.org/schema/webflow
-                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd" >
-                          
-                          
- <var name="user11" class="net.kzn.shoppingbackend.dto.User" />   
- 
- 
-
-<!-- id is any name no where defined "signup-personal" is jsp name -->
- <view-state id="personal11" view="flows/register/signup-personal" model="user11">
- 	<transition on="billing1" to="billing11" />
- </view-state>
- <view-state id="billing11" view="flows/register/signup-billing"></view-state>
- <view-state id="confirml11" view="flows/register/signup-confirm"></view-state>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 
- <end-state id="home12" view="externalRedirect:contextRelative:/about"></end-state>
-  <view-state id="successl11" view="flows/register/signup-success"></view-state>
- 
- 
+	<var name="user11" class="net.kzn.shoppingbackend.dto.User" />
+	<var name="billing111" class="net.kzn.shoppingbackend.dto.Address" />
 
-<global-transitions>
-   <!--   home1 defined in signup-personal.jsp as _home -->
+	<!-- id is any name no where defined "signup-personal" is jsp name -->
+	<view-state id="personal11" view="flows/register/signup-personal"
+		model="user11">
+		<transition on="billing1" to="billing11" />
+	</view-state>
+	<view-state id="billing11" view="flows/register/signup-billing"
+		model="billing111">
+		<transition on="personal" to="personal11" />
+		<transition on="confirm" to="confirml11" />
+	</view-state>
 	
- <transition on="home1" to="home12"></transition>
-</global-transitions>
+	<view-state id="confirml11" view="flows/register/signup-confirm">
+		<transition on="personal" to="personal11" />
+		<transition on="billing" to="billing11" />
+		<transition on="success" to="successl11" />
+
+	</view-state>
+
+
+	<end-state id="home12" view="externalRedirect:contextRelative:/about"></end-state>
+	<view-state id="successl11" view="flows/register/signup-success"></view-state>
+
+
+
+	<global-transitions>
+		<!-- home1 defined in signup-personal.jsp as _home -->
+
+		<transition on="home1" to="home12"></transition>
+	</global-transitions>
 
 
 
