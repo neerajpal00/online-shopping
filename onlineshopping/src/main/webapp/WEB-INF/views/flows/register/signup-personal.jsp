@@ -64,10 +64,10 @@
 							<label class="control-label col-md-4">Select Role:</label>
 							<div class="col-md-8">
 								<label class="rdio-inline">
-								<sf:radiobutton path="firstName" value="USER" checked="checked" />User
+								<sf:radiobutton path="role" value="USER" checked="checked" />User
 								</label>
 								<label class="rdio-inline">
-								<sf:radiobutton path="firstName" value="SUPPLIER" />Supplier
+								<sf:radiobutton path="role" value="SUPPLIER" />Supplier
 								</label>
 							</div>
 						</div>

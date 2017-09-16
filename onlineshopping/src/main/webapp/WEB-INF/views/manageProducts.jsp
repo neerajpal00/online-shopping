@@ -20,7 +20,7 @@
 
 				<div class="panel-heading">
 
-					<h4>Product Management</h4>
+					<h4>Product Management "${contextRoot}"</h4>
 
 				</div>
 

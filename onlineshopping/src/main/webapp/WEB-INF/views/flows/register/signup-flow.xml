@@ -7,24 +7,41 @@
 
 	<var name="user11" class="net.kzn.shoppingbackend.dto.User" />
 	<var name="billing111" class="net.kzn.shoppingbackend.dto.Address" />
+	
+	<!-- Returning and adding RegisterModel instance inside the flow -->
+	<on-start>
+		<evaluate expression="registerHandler.init()"  result="flowScope.myRegModel"/>
+	
+	</on-start>
+	
 
 	<!-- id is any name no where defined "signup-personal" is jsp name -->
-	<view-state id="personal11" view="flows/register/signup-personal"
-		model="user11">
+	<view-state id="personal11" view="flows/register/signup-personal" model="user11">
 		<transition on="billing1" to="billing11" />
+		<on-exit>
+			<evaluate expression="registerHandler.addUser(flowScope.myRegModel,user11)" />
+		</on-exit>
 	</view-state>
-	<view-state id="billing11" view="flows/register/signup-billing"
-		model="billing111">
+	<view-state id="billing11" view="flows/register/signup-billing" model="billing111">
 		<transition on="personal" to="personal11" />
 		<transition on="confirm" to="confirml11" />
+		<on-exit>
+			<evaluate expression="registerHandler.addBilling(flowScope.myRegModel,billing111)"></evaluate>
+		</on-exit>
+		
 	</view-state>
 	
-	<view-state id="confirml11" view="flows/register/signup-confirm">
+	<view-state id="confirml11" view="flows/register/signup-confirm" model="flowScope.myRegModel">
 		<transition on="personal" to="personal11" />
 		<transition on="billing" to="billing11" />
-		<transition on="success" to="successl11" />
-
+		<transition on="submit" to="submit" />
 	</view-state>
+	
+	<action-state id="submit">
+	 	<evaluate expression="registerHandler.saveAll(flowScope.myRegModel)" />
+	 	<transition on="success" to="success111" />
+	
+	</action-state>
 
 
 	<end-state id="home12" view="externalRedirect:contextRelative:/about"></end-state>
