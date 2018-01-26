@@ -17,11 +17,20 @@
 
 	<!-- id is any name no where defined "signup-personal" is jsp name -->
 	<view-state id="personal11" view="flows/register/signup-personal" model="user11">
-		<transition on="billing1" to="billing11" />
+		<transition on="billing1" to="validate" />
 		<on-exit>
 			<evaluate expression="registerHandler.addUser(flowScope.myRegModel,user11)" />
 		</on-exit>
 	</view-state>
+	
+	<action-state id="validate">
+		<evaluate expression="registerHandler.validateUser(user11,messageContext)"/>
+		<transition on="success" to="billing11"/>
+		<transition on="failure" to="personal11" />
+	</action-state>
+	
+	
+	
 	<view-state id="billing11" view="flows/register/signup-billing" model="billing111">
 		<transition on="personal" to="personal11" />
 		<transition on="confirm" to="confirml11" />
@@ -45,14 +54,14 @@
 
 
 	<end-state id="home12" view="externalRedirect:contextRelative:/about"></end-state>
-	<view-state id="successl11" view="flows/register/signup-success"></view-state>
+	<view-state id="success111" view="flows/register/signup-success"></view-state>
 
 
 
 	<global-transitions>
 		<!-- home1 defined in signup-personal.jsp as _home -->
 
-		<transition on="home1" to="home12"></transition>
+		<transition on="home1" to="home12" validate="false" />
 	</global-transitions>
 
 

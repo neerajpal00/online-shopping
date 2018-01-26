@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 
@@ -37,6 +38,15 @@ public class User implements Serializable {
 	private String contactNumber;
 	private String role;
 	private String password;
+	
+	@Transient
+	public String repassword;
+	public String getRepassword() {
+		return repassword;
+	}
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
+	}
 	private boolean enabled=true;
 	
 	//here user mappedBy="user" is property name which is used in child class cart 

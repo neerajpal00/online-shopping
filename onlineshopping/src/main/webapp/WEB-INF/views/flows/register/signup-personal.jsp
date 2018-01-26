@@ -26,6 +26,8 @@
 							<label class="control-label col-md-4">First Name:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="firstName" placeholder="First Name" class="form-control" />
+							<sf:errors path="firstName" cssClass="help-block" element="em" />
+								
 							</div>
 						</div>
 						
@@ -33,6 +35,8 @@
 							<label class="control-label col-md-4">Last Name:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="lastName" placeholder="Last Name" class="form-control" />
+								<sf:errors path="lastName" cssClass="help-block" element="em" />
+								
 							</div>
 						</div>
 						
@@ -40,6 +44,8 @@
 							<label class="control-label col-md-4">Email:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="email" placeholder="Email" class="form-control" />
+								<sf:errors path="email" cssClass="help-block" element="em" />
+								
 							</div>
 						</div>
 						
@@ -48,6 +54,8 @@
 							<label class="control-label col-md-4">Contact Number:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="contactNumber" placeholder="XXXXXXXXX" class="form-control" />
+								<sf:errors path="contactNumber" cssClass="help-block" element="em" />
+								
 							</div>
 						</div>
 						
@@ -57,6 +65,16 @@
 							<label class="control-label col-md-4">Password:</label>
 							<div class="col-md-8">
 								<sf:input type="password" path="password" placeholder="Password" class="form-control" />
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label class="control-label col-md-4">Password:</label>
+							<div class="col-md-8">
+								<sf:input type="password" path="repassword" placeholder="confirm password" class="form-control" />
+																<sf:errors path="repassword" cssClass="help-block" element="em" />
+								
 							</div>
 						</div>
 						
